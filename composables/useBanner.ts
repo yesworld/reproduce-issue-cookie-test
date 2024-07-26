@@ -4,7 +4,8 @@ export default function useBanner() {
   const showBanner = computed(() => token.value === 'show');
 
   function dismissBanner() {
-    token.value = null
+    token.value = null // doesn't work
+    // token.value = '' // it works!
   }
 
   const activeBanner = () => {
@@ -12,7 +13,8 @@ export default function useBanner() {
   }
 
   const toggleBanner = () => {
-    token.value = token.value === 'show' ? null : 'show';
+    token.value = token.value === 'show' ? null : 'show' // doesn't work
+    // token.value = token.value === 'show' ? '' : 'show' // it works!
   }
 
   return {
